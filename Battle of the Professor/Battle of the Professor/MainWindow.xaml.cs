@@ -37,5 +37,5 @@ namespace Battle_of_the_Professor
                 imgPhoto.Source = new BitmapImage(new Uri(op.FileName));
             }
         }
-    }
+    }e
 }
