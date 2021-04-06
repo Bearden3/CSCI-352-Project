@@ -12,10 +12,25 @@
         <ColumnDefinition Width="349*" />
         <ColumnDefinition Width="30*" />
         </Grid.ColumnDefinitions>
-        <Image Margin="12,12,16,71" Name="imgPhoto"
-        Stretch="Fill" Grid.Column="1" />
+        <Image Margin="56,12,596.333,331.667" x:Name="imgPhoto"
+        Stretch="Fill" Grid.ColumnSpan="2" />
         <Button Height="23" HorizontalAlignment="Left"
-        Margin="12,0,0,34" Name="btnLoad" VerticalAlignment="Bottom"
-        Width="75" Grid.Column="1" Click="btnLoad_Click">_Load</Button>
+        Margin="56,0,0,9.667" x:Name="btnLoad" VerticalAlignment="Bottom"
+        Width="75" Click="btnLoad_Click" Grid.ColumnSpan="2" Content="_Load"/>
+        <Button x:Name="Map" Content="Map" Grid.Column="1" HorizontalAlignment="Left" Margin="84,388,0,0" VerticalAlignment="Top" Width="76" Click="Map_Click" Height="23"/>
+        <Button x:Name="Right" Content="Right" Grid.Column="1" HorizontalAlignment="Left" Margin="387,346,0,0" VerticalAlignment="Top" Width="41" Height="40" Click="Right_Click"/>
+        <Button x:Name="Left" Content="Left" Grid.Column="1" HorizontalAlignment="Left" Margin="295,346,0,0" VerticalAlignment="Top" Width="41" Height="40" Click="Left_Click"/>
+        <Button x:Name="Down" Content="Down" Grid.Column="1" HorizontalAlignment="Left" Margin="341,371,0,0" VerticalAlignment="Top" Width="41" Height="40" Click="Down_Click"/>
+        <Button x:Name="Up" Content="UP" Grid.Column="1" HorizontalAlignment="Left" Margin="341,316,0,0" VerticalAlignment="Top" Width="41" Height="40" RenderTransformOrigin="0.609,1.513" Click="Up_Click"/>
+        <Image Name="middle" Source="C:\Users\Mason\source\repos\GP\Map\middle.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97.348" Margin="259.429,107.348,0,0" VerticalAlignment="Top" Width="209.88"/>
+        <Image Name="bottom" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="254,207,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image Name="rightside" Source="C:\Users\Mason\source\repos\GP\Map\Open.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,110,0,0" VerticalAlignment="Top" Width="210"/>
+        <TextBox Name="text" Grid.Column="1" HorizontalAlignment="Left" Height="107" Margin="457,309,0,0" TextWrapping="Wrap" Text="Do not move left, in the beginning" VerticalAlignment="Top" Width="228" Grid.ColumnSpan="2"/>
+        <Image x:Name="Top" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="254,12,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image x:Name="left1" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" HorizontalAlignment="Left" Height="97" Margin="44,12,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
+        <Image x:Name="left2" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" HorizontalAlignment="Left" Height="97" Margin="45,207,0,0" VerticalAlignment="Top" Width="209" Grid.Column="1"/>
+        <Image x:Name="right1" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,12,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image x:Name="right2" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,207,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image x:Name="leftside" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" HorizontalAlignment="Left" Height="97" Margin="44,109,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
     </Grid>
 </Window>
