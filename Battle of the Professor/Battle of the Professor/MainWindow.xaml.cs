@@ -23,6 +23,15 @@ namespace Battle_of_the_Professor
         public MainWindow()
         {
             InitializeComponent();
+            leftside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+            rightside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Open.PNG", UriKind.Absolute));
+            Top.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+            Bottom.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Open.PNG", UriKind.Absolute));
+            Middle.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\middle.PNG", UriKind.Absolute));
+            left1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+            left2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+            right1.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+            right2.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
         }
 
         public class Maptest
@@ -34,12 +43,13 @@ namespace Battle_of_the_Professor
                 this.Row = Row;
                 this.Col = Col;
             }
-            public int[,] map = new int[5, 7] { //initializes map, not official map just a test map for easy movement
-            { 1, 1, 1, 0, 1, 1, 1 },
-            { 1, 1, 1, 0, 1, 1, 1 },
-            { 0, 0, 0, 0, 0, 0, 0 },
-            { 1, 1, 1, 0, 1, 1, 1 },
-            { 1, 1, 1, 0, 1, 1, 1 }
+            public int[,] map = new int[6, 8] { //initializes map, not official map just a test map for easy movement
+            { 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1 },
+            { 1, 0, 0, 0, 0, 0, 0, 1 },
+            { 1, 0, 1, 0, 1, 0, 1, 1 },
+            { 1, 0, 0, 0, 1, 0, 1, 1 },
+            { 1, 1, 1, 1, 1, 1, 1, 1 }
             };
 
             //these will check if the spaces are moveable and return true if they are
@@ -83,12 +93,13 @@ namespace Battle_of_the_Professor
             op.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" +
               "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
               "Portable Network Graphic (*.png)|*.png";
+            
             if (op.ShowDialog() == true)
             {
                 imgPhoto.Source = new BitmapImage(new Uri(op.FileName));
             }
         }
-        Maptest save = new Maptest(2, 0);
+        Maptest save = new Maptest(2, 1);
 
         private void Map_Click(object sender, RoutedEventArgs e) // this is a test to load from a file, not working yet
         {
@@ -118,10 +129,10 @@ namespace Battle_of_the_Professor
             if (save.RightCheck(save.Row, save.Col) == true)
             {
                 save.Col = save.Col + 1;
-                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row - 1, save.Col] == 0) { bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
+                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Top.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row - 1, save.Col] == 0) { Bottom.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Bottom.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else rightside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else leftside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
             }
             else if (save.RightCheck(save.Row, save.Col) == false) { text.Text = "can't move that way"; }
 
@@ -132,10 +143,10 @@ namespace Battle_of_the_Professor
             if (save.UpCheck(save.Row, save.Col) == true)
             {
                 save.Row = save.Row + 1;
-                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row - 1, save.Col] == 0) { bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
+                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Top.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row - 1, save.Col] == 0) { Bottom.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Bottom.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else rightside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else leftside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
             }
             else if (save.UpCheck(save.Row, save.Col) == false) { text.Text = "can't move that way"; }
         }
@@ -145,10 +156,10 @@ namespace Battle_of_the_Professor
             if (save.LeftCheck(save.Row, save.Col) == true)
             {
                 save.Col = save.Col - 1;
-                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row - 1, save.Col] == 0) { bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
+                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Top.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row - 1, save.Col] == 0) { Bottom.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Bottom.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else rightside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else leftside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
             }
             else if (save.LeftCheck(save.Row, save.Col) == false) { text.Text = "can't move that way"; }
 
@@ -159,10 +170,10 @@ namespace Battle_of_the_Professor
             if (save.DownCheck(save.Row, save.Col) == true)
             {
                 save.Row = save.Row - 1;
-                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else Top.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row - 1, save.Col] == 0) { bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else bottom.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else rightside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
-                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Open.PNG")); } else leftside.Source = new BitmapImage(new Uri(@"C:\Users\Mason\source\repos\GP\Map\Closed.PNG"));
+                if (save.map[save.Row + 1, save.Col] == 0) { Top.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Top.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
+                if (save.map[save.Row - 1, save.Col] == 0) { Bottom.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else Bottom.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute)); 
+                if (save.map[save.Row, save.Col + 1] == 0) { rightside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else rightside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute)); 
+                if (save.map[save.Row, save.Col - 1] == 0) { leftside.Source = new BitmapImage(new Uri(@"\Map\Open.PNG", UriKind.Relative)); } else leftside.Source = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\Map\\Closed.PNG", UriKind.Absolute));
             }
             else if (save.DownCheck(save.Row, save.Col) == false) { text.Text = "can't move that way"; }
         }

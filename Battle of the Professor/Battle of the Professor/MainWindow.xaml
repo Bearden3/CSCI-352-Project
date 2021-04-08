@@ -22,15 +22,15 @@
         <Button x:Name="Left" Content="Left" Grid.Column="1" HorizontalAlignment="Left" Margin="295,346,0,0" VerticalAlignment="Top" Width="41" Height="40" Click="Left_Click"/>
         <Button x:Name="Down" Content="Down" Grid.Column="1" HorizontalAlignment="Left" Margin="341,371,0,0" VerticalAlignment="Top" Width="41" Height="40" Click="Down_Click"/>
         <Button x:Name="Up" Content="UP" Grid.Column="1" HorizontalAlignment="Left" Margin="341,316,0,0" VerticalAlignment="Top" Width="41" Height="40" RenderTransformOrigin="0.609,1.513" Click="Up_Click"/>
-        <Image Name="middle" Source="C:\Users\Mason\source\repos\GP\Map\middle.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97.348" Margin="259.429,107.348,0,0" VerticalAlignment="Top" Width="209.88"/>
-        <Image Name="bottom" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="254,207,0,0" VerticalAlignment="Top" Width="210"/>
-        <Image Name="rightside" Source="C:\Users\Mason\source\repos\GP\Map\Open.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,110,0,0" VerticalAlignment="Top" Width="210"/>
-        <TextBox Name="text" Grid.Column="1" HorizontalAlignment="Left" Height="107" Margin="457,309,0,0" TextWrapping="Wrap" Text="Do not move left, in the beginning" VerticalAlignment="Top" Width="228" Grid.ColumnSpan="2"/>
-        <Image x:Name="Top" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="254,12,0,0" VerticalAlignment="Top" Width="210"/>
-        <Image x:Name="left1" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" HorizontalAlignment="Left" Height="97" Margin="44,12,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
-        <Image x:Name="left2" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" HorizontalAlignment="Left" Height="97" Margin="45,207,0,0" VerticalAlignment="Top" Width="209" Grid.Column="1"/>
-        <Image x:Name="right1" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,12,0,0" VerticalAlignment="Top" Width="210"/>
-        <Image x:Name="right2" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,207,0,0" VerticalAlignment="Top" Width="210"/>
-        <Image x:Name="leftside" Source="C:\Users\Mason\source\repos\GP\Map\Closed.PNG" HorizontalAlignment="Left" Height="97" Margin="44,109,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
+        <Image Name="Middle" Grid.Column="1" HorizontalAlignment="Left" Height="97.348" Margin="259.429,107.348,0,0" VerticalAlignment="Top" Width="209.88"/>
+        <Image Name="Bottom"  Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="254,207,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image Name="rightside"  Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,110,0,0" VerticalAlignment="Top" Width="210"/>
+        <TextBox Name="text" Grid.Column="1" HorizontalAlignment="Left" Height="107" Margin="457,309,0,0" TextWrapping="Wrap" Text="Pics will apear when you start the game" VerticalAlignment="Top" Width="228" Grid.ColumnSpan="2"/>
+        <Image x:Name="Top"  Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="254,12,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image x:Name="left1"  HorizontalAlignment="Left" Height="97" Margin="44,12,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
+        <Image x:Name="left2"  HorizontalAlignment="Left" Height="97" Margin="45,207,0,0" VerticalAlignment="Top" Width="209" Grid.Column="1"/>
+        <Image x:Name="right1"  Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,12,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image x:Name="right2"  Grid.Column="1" HorizontalAlignment="Left" Height="97" Margin="464,207,0,0" VerticalAlignment="Top" Width="210"/>
+        <Image x:Name="leftside"  HorizontalAlignment="Left" Height="97" Margin="44,109,0,0" VerticalAlignment="Top" Width="210" Grid.Column="1"/>
     </Grid>
 </Window>
